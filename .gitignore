@@ -25,3 +25,5 @@ Thumbs.db
 
 # Ignore any other unwanted files or directories
 *.swp
+
+notes.txt
