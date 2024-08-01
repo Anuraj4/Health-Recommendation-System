@@ -7,6 +7,7 @@
 3) Scikit-learn
 4) Keras
 5) Tensorflow
+6) flask-login and flask-sqlalchemy
 
 # Steps
 
@@ -14,4 +15,5 @@
 ## Adding Main.py file
 ## Added eda.py file
 ## Added train.py
+
 

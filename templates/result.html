@@ -3,15 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>Prediction Result</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">Welcome, {{ current_user.username }}!</h1>
-        <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Logout</a>
-        <br>
-        <a href="{{ url_for('predict') }}" class="btn btn-primary mt-3">Predict Heart Disease</a>
+        <h1 class="mt-5">Prediction Result</h1>
+        <div class="alert alert-info mt-4">
+            <p>The prediction is: <strong>{{ result }}</strong></p>
+        </div>
+        <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Back to Home</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
