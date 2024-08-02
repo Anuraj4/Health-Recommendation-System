@@ -68,22 +68,35 @@ def index():
 @login_required
 def predict():
     if request.method == 'POST':
-        # Replace these with the actual features your model expects
-        features = [request.form['feature1'], request.form['feature2'], request.form['feature3'], request.form['feature4']]
-        features = np.array(features).reshape(1, -1)
-        
-        # Load the model
-        with open('heart_disease_model.pkl', 'rb') as f:
-            model = pickle.load(f)
-        
-        prediction = model.predict(features)
-        
-        if prediction == 1:
-            result = "positive"
-        else:
-            result = "negative"
-        
-        return render_template('result.html', result=result)
+        try:
+            age = int(request.form['age'])
+            sex = int(request.form['sex'])
+            cp = int(request.form['cp'])
+            trestbps = int(request.form['trestbps'])
+            chol = int(request.form['chol'])
+            fbs = int(request.form['fbs'])
+            restecg = int(request.form['restecg'])
+            thalach = int(request.form['thalach'])
+            exang = int(request.form['exang'])
+            oldpeak = float(request.form['oldpeak'])
+            slope = int(request.form['slope'])
+            ca = int(request.form['ca'])
+            thal = int(request.form['thal'])
+
+            features = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+
+            with open('heart_disease_model.pkl', 'rb') as f:
+                model = pickle.load(f)
+            
+            prediction = model.predict(features)
+            result = "positive" if prediction[0] == 1 else "negative"
+            
+            print(f"DEBUG: Prediction made: {result}")  # Debug statement
+            
+            return render_template('result.html', result=result)
+        except Exception as e:
+            flash(f'Error: {e}', 'danger')
+            return redirect(url_for('predict'))
     
     return render_template('predict.html')
 
