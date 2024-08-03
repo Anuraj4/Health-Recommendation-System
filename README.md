@@ -1,6 +1,6 @@
 # AI Health Recommendation System
 
-![image](https://github.com/Anuraj4/Data-Structure-Visualizer/blob/main/Screenshot%202024-07-11%20215025.png)
+![image](https://github.com/Anuraj4/Images/blob/main/Health-Recommendation.png)
 
 ## Table of Contents
 
