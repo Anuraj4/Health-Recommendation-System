@@ -1,0 +1,38 @@
+/* Centering result box */
+body {
+    background-color: #f0f2f5; /* Light grey background for the entire page */
+    font-family: Arial, sans-serif; /* Clean and modern font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container Styling */
+.container {
+    background-color: #ffffff; /* White background for containers */
+    border-radius: 8px; /* Rounded corners */
+    padding: 2rem; /* Padding inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px; /* Max width for larger screens */
+    text-align: center; /* Center text inside the container */
+}
+
+
+/* Alert Box Styling */
+.alert-info {
+    border-radius: 8px; /* Rounded corners for alerts */
+    padding: 1rem; /* Padding inside alerts */
+    background-color: #d9edf7; /* Light blue background for info alerts */
+    color: #31708f; /* Dark blue text color */
+}
+
+/* Button Styling */
+.btn {
+    border-radius: 4px; /* Rounded corners for buttons */
+    font-size: 1rem; /* Font size for buttons */
+    text-align: center; /* Center text in buttons */
+    margin: 0.5rem; /* Space between buttons */
+}
+
