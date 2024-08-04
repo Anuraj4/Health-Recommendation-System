@@ -7,8 +7,26 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./../static/style.css">
 </head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 400px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 <body>
-    <div class="container mt-5 text-center">
+    <div class="container">
         <h1 class="mt-5">Welcome, {{ current_user.username }}!</h1>
         <a href="{{ url_for('predict') }}" class="btn btn-primary mt-3">Predict Heart Disease</a>
         <br>
