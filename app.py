@@ -104,14 +104,30 @@ def predict():
             prediction = model.predict(features)
             result = "positive" if prediction[0] == 1 else "negative"
             
-            print(f"DEBUG: Prediction made: {result}")  # Debug statement
-            
-            return render_template('result.html', result=result)
+            health_tips = get_health_tips(prediction[0])
+
+            return render_template('result.html', result=result, health_tips=health_tips)
         except Exception as e:
             flash(f'Error: {e}', 'danger')
             return redirect(url_for('predict'))
     
     return render_template('predict.html')
+
+def get_health_tips(prediction):
+    if prediction == 1:
+        return [
+            "Follow a heart-healthy diet.",
+            "Engage in regular physical activity.",
+            "Avoid smoking and limit alcohol consumption.",
+            "Maintain a healthy weight."
+        ]
+    else:
+        return [
+            "Continue following a healthy lifestyle to maintain good heart health.",
+            "Regularly monitor your blood pressure and cholesterol levels.",
+            "Stay active and eat a balanced diet.",
+            "Avoid stress and practice relaxation techniques."
+        ]
 
 if __name__ == '__main__':
     with app.app_context():

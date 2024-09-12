@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Health Tips{% endblock %}
+
+{% block content %}
+    <h2 class="mt-5">Health Tips</h2>
+    <p class="mt-3">Based on your health data, here are some tips for you:</p>
+    <ul class="list-group mt-3">
+        {% for tip in health_tips %}
+            <li class="list-group-item">{{ tip }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Go Back</a>
+{% endblock %}
